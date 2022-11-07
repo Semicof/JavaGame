@@ -3,12 +3,15 @@ package gamestates;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
+import java.awt.image.BufferedImage;
+import java.util.Random;
 
 import entities.Player;
 import levels.LevelManager;
 import main.Game;
 import ui.PauseOverlay;
 import utilz.LoadSave;
+import static utilz.Constants.Environment.*;
 
 public class Playing extends State implements Statemethods {
 	private Player player;
@@ -19,9 +22,20 @@ public class Playing extends State implements Statemethods {
 	private int maxTitlesOffset=lvlTitlesWide-Game.TILES_IN_WIDTH;
 	private int maxLvlOffsetX=maxTitlesOffset*Game.TILES_SIZE;
 
+	private BufferedImage backgroundImg,bigCloudsImg,smallCloudsImg;
+	private int[] smallCloudPos;
+	private Random random=new Random();
+
 	public Playing(Game game) {
 		super(game);
 		initClasses();
+		backgroundImg=LoadSave.GetSpriteAtlas(LoadSave.PLAYING_BG_IMG);
+		bigCloudsImg=LoadSave.GetSpriteAtlas(LoadSave.BIG_CLOUDS_IMG);
+		smallCloudsImg=LoadSave.GetSpriteAtlas(LoadSave.SMALL_CLOUDS_IMG);
+		smallCloudPos=new int[8];
+		for(int i=0;i<smallCloudPos.length;i++){
+			smallCloudPos[i]=(int)(90*Game.SCALE)+random.nextInt((int)(100*Game.SCALE));
+		}
 	}
 
 	private void initClasses() {
@@ -68,6 +82,8 @@ public class Playing extends State implements Statemethods {
 
 	@Override
 	public void draw(Graphics g) {
+		g.drawImage(backgroundImg,0,0,Game.GAME_WIDTH,Game.GAME_HEIGHT,null);
+		drawClouds(g);
 		levelManager.draw(g,xLvlOffset);
 		player.render(g,xLvlOffset);
 		if(paused){
@@ -75,6 +91,14 @@ public class Playing extends State implements Statemethods {
 			g.fillRect(0,0,Game.GAME_WIDTH,Game.GAME_HEIGHT);
 			pauseOverlay.draw(g);
 		}
+	}
+
+	private void drawClouds(Graphics g) {
+		for(int i=0;i<3;i++)
+			g.drawImage(bigCloudsImg,i*BIG_CLOUDS_WIDTH-(int)(xLvlOffset*0.3),(int)(204*Game.SCALE),BIG_CLOUDS_WIDTH,BIG_CLOUDS_HEIGHT,null);
+		for(int i=0;i<smallCloudPos.length;i++)
+			g.drawImage(smallCloudsImg,SMALL_CLOUDS_WIDTH*4*i-(int)(xLvlOffset*0.7),smallCloudPos[i],SMALL_CLOUDS_WIDTH,SMALL_CLOUDS_HEIGHT,null);
+
 	}
 
 	@Override
