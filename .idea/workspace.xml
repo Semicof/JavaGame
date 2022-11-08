@@ -3,10 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="21d5ae9f-f340-443a-957b-fadb0a975af5" name="Changes" comment="pauseMenu,level">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/level_one_data_long.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/level_one_data_long.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entities/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/Entity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gamestates/Playing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gamestates/Playing.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gamestates/State.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gamestates/State.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/GameWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/GameWindow.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utilz/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utilz/Constants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utilz/HelpMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utilz/HelpMethods.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utilz/LoadSave.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utilz/LoadSave.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -36,17 +38,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "ToolWindowRun.ShowToolbar": "false",
-    "last_opened_file_path": "D:/JavaGame",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;ToolWindowRun.ShowToolbar&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/JavaGame&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Semicof\IdeaProjects\JavaGame\res\audio" />
