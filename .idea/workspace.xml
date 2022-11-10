@@ -3,11 +3,28 @@
   <component name="ChangeListManager">
     <list default="true" id="21d5ae9f-f340-443a-957b-fadb0a975af5" name="Changes" comment="pauseMenu,level">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/player_sprites.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/player_sprites.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/entities/Crabby.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/Crabby.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/entities/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/Enemy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/entities/EnemyManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/EnemyManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entities/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/Entity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entities/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gamestates/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gamestates/Menu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gamestates/Playing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gamestates/Playing.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gamestates/State.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gamestates/State.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/inputs/MouseInputs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/inputs/MouseInputs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/levels/LevelManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/levels/LevelManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/GameWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/GameWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/MenuButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/MenuButton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/PauseButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/PauseButton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/PauseOverlay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/PauseOverlay.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/SoundButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/SoundButton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/URMButtons.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/VolumeButtons.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utilz/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utilz/Constants.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utilz/HelpMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utilz/HelpMethods.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utilz/LoadSave.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utilz/LoadSave.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -16,18 +16,23 @@ public class HelpMethods {
 	}
 
 	private static boolean IsSolid(float x, float y, int[][] lvlData) {
-		int maxWidth=lvlData[0].length*Game.TILES_SIZE;
+		int maxWidth = lvlData[0].length * Game.TILES_SIZE;
 		if (x < 0 || x >= maxWidth)
 			return true;
 		if (y < 0 || y >= Game.GAME_HEIGHT)
 			return true;
 		float xIndex = x / Game.TILES_SIZE;
 		float yIndex = y / Game.TILES_SIZE;
-		return IsTileSolid((int)xIndex,(int)yIndex,lvlData);
+
+		return IsTileSolid((int) xIndex, (int) yIndex, lvlData);
 	}
 
-	public static boolean IsFloor(Rectangle2D.Float hitbox, float xSpeed, int[][] lvlData){
-		return IsSolid(hitbox.x+xSpeed, hitbox.y+ hitbox.height+1, lvlData);
+	public static boolean IsTileSolid(int xTile, int yTile, int[][] lvlData) {
+		int value = lvlData[yTile][xTile];
+
+		if (value >= 48 || value < 0 || value != 11)
+			return true;
+		return false;
 	}
 
 	public static float GetEntityXPosNextToWall(Rectangle2D.Float hitbox, float xSpeed) {
@@ -65,35 +70,38 @@ public class HelpMethods {
 
 	}
 
-	public static boolean IsAllTileWalkable(int xStart,int xEnd,int y,int[][] lvlData){
-		for(int i=0;i<xEnd-xStart;i++) {
+	/**
+	 * We just check the bottomleft of the enemy here +/- the xSpeed. We never check
+	 * bottom right in case the enemy is going to the right. It would be more
+	 * correct checking the bottomleft for left direction and bottomright for the
+	 * right direction. But it wont have big effect in the game. The enemy will
+	 * simply change direction sooner when there is an edge on the right side of the
+	 * enemy, when its going right.
+	 */
+	public static boolean IsFloor(Rectangle2D.Float hitbox, float xSpeed, int[][] lvlData) {
+		return IsSolid(hitbox.x + xSpeed, hitbox.y + hitbox.height + 1, lvlData);
+	}
+
+	public static boolean IsAllTilesWalkable(int xStart, int xEnd, int y, int[][] lvlData) {
+		for (int i = 0; i < xEnd - xStart; i++) {
 			if (IsTileSolid(xStart + i, y, lvlData))
 				return false;
-			if (IsTileSolid(xStart + i, y+1, lvlData))
+			if (!IsTileSolid(xStart + i, y + 1, lvlData))
 				return false;
 		}
+
 		return true;
 	}
 
-	public static boolean IsSightClear(int[][] lvlData,Rectangle2D.Float hitbox1,Rectangle2D.Float hitbox2,int titleY){
-		int firstXTile=(int)(hitbox1.x/Game.TILES_SIZE);
-		int secondXTile=(int)(hitbox2.x/Game.TILES_SIZE);
+	public static boolean IsSightClear(int[][] lvlData, Rectangle2D.Float firstHitbox, Rectangle2D.Float secondHitbox, int yTile) {
+		int firstXTile = (int) (firstHitbox.x / Game.TILES_SIZE);
+		int secondXTile = (int) (secondHitbox.x / Game.TILES_SIZE);
 
-		if(firstXTile>secondXTile){
-			return IsAllTileWalkable(secondXTile,firstXTile,titleY,lvlData);
-		}
-		else {
-			return IsAllTileWalkable(firstXTile,secondXTile,titleY,lvlData);
-		}
-	}
+		if (firstXTile > secondXTile)
+			return IsAllTilesWalkable(secondXTile, firstXTile, yTile, lvlData);
+		else
+			return IsAllTilesWalkable(firstXTile, secondXTile, yTile, lvlData);
 
-	public static boolean IsTileSolid(int xTile, int titleY, int[][] lvlData) {
-
-		int value = lvlData[titleY][xTile];
-
-		if (value >= 48 || value < 0 || value != 11)
-			return true;
-		return false;
 	}
 
 }
